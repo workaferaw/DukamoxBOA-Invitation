@@ -67,6 +67,8 @@
 @layer components {
   .envelope {
     @apply relative w-full max-w-md aspect-[4/3] bg-envelope rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer mx-auto;
+    margin-top: 2rem;
+    transform: translateY(0);
   }
   
   .envelope-flap {
@@ -80,19 +82,41 @@
     z-index: 1;
   }
   
+  .envelope-seal-wrapper {
+    @apply fixed w-full flex items-center justify-center;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+  }
+  
   .envelope-seal {
-    @apply absolute top-1/4 left-1/2 w-12 h-12 bg-seal rounded-full -translate-x-1/2 -translate-y-1/2 shadow-md flex items-center justify-center;
+    @apply fixed w-14 h-14 bg-seal rounded-full flex items-center justify-center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .envelope-seal svg {
+    @apply w-8 h-8;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  }
+  
+  .envelope-seal path {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    stroke-width: 0.5;
   }
   
   .letter {
-    @apply absolute bottom-0 left-1/2 w-[90%] h-[85%] bg-parchment -translate-x-1/2 rounded-t-lg shadow-md transition-all duration-700 ease-out flex items-center justify-center;
-    transform: translateY(100%);
+    @apply absolute top-1/2 left-1/2 w-[95%] h-[90%] bg-parchment rounded-lg shadow-md transition-all duration-700 ease-out;
+    transform: translate(-50%, 100%);
     z-index: 0;
   }
   
   .letter-open {
-    transform: translateY(5%) !important;
+    transform: translate(-50%, -45%) !important;
     z-index: 3;
   }
   
@@ -101,7 +125,7 @@
   }
 
   .gold-border {
-    @apply relative;
+    @apply relative overflow-hidden;
   }
   
   .gold-border::after {
@@ -109,7 +133,8 @@
   }
   
   .letter-content {
-    @apply p-8 h-full w-full flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 delay-500;
+    @apply p-6 h-full w-full flex flex-col items-center justify-start opacity-0 transition-opacity duration-500 delay-500 overflow-y-auto;
+    padding-top: 2rem;
   }
   
   .letter-content-visible {
