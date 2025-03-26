@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Custom colors for invitation
+        cream: '#F8F5E9',
+        gold: '#D4AF37',
+        goldLight: '#E6C65C',
+        parchment: '#F8F3E2',
+        envelope: '#E8E0CC',
+        envelopeShade: '#D8D0BC',
+        seal: '#B51F1F',
+        textPrimary: '#2D2A22',
+        textSecondary: '#5A5242',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +95,60 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'slide-up': {
+          '0%': { 
+            transform: 'translateY(100%)',
+            opacity: '0'
+          },
+          '100%': { 
+            transform: 'translateY(0)',
+            opacity: '1'
+          }
+        },
+        'slide-down': {
+          '0%': { 
+            transform: 'translateY(0)',
+            opacity: '1'
+          },
+          '100%': { 
+            transform: 'translateY(100%)',
+            opacity: '0'
+          }
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '1'
+          }
+        },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-8px)'
+          }
+        },
+        'shimmer': {
+          '0%': {
+            backgroundPosition: '-500px 0'
+          },
+          '100%': {
+            backgroundPosition: '500px 0'
+          }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-up': 'slide-up 0.8s cubic-bezier(0.22, 1, 0.36, 1)',
+        'slide-down': 'slide-down 0.8s cubic-bezier(0.22, 1, 0.36, 1)',
+        'fade-in': 'fade-in 1s ease-out',
+        'float': 'float 3s ease-in-out infinite',
+        'shimmer': 'shimmer 3s linear infinite'
 			}
 		}
 	},
