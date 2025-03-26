@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InvitationMessage from '@/components/InvitationMessage';
 import Envelope from '@/components/Envelope';
 import { motion } from "framer-motion";
@@ -7,8 +7,19 @@ import { motion } from "framer-motion";
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Load saved state from localStorage when component mounts
+  useEffect(() => {
+    const savedState = localStorage.getItem('invitationState');
+    if (savedState) {
+      setIsOpen(JSON.parse(savedState));
+    }
+  }, []);
+
   const toggleEnvelope = () => {
-    setIsOpen(!isOpen);
+    const newState = !isOpen;
+    setIsOpen(newState);
+    // Save to localStorage whenever the state changes
+    localStorage.setItem('invitationState', JSON.stringify(newState));
   };
 
   return (
