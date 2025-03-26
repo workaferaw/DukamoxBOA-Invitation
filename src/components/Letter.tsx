@@ -31,6 +31,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={contentVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className="w-full"
         >
           <h1 className="text-center mb-6">
             <span className="inline-block text-xs uppercase tracking-[0.2em] text-gold font-semibold mb-2">Formal Invitation</span>
