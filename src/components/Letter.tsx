@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 
@@ -13,7 +14,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
       // Delay showing content until letter animation completes - make it faster
       const timer = setTimeout(() => {
         setContentVisible(true);
-      }, 500);
+      }, 300);
       return () => clearTimeout(timer);
     } else {
       setContentVisible(false);
@@ -21,7 +22,18 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
   }, [isOpen]);
 
   return (
-    <div className={`letter gold-border ${isOpen ? 'letter-open' : ''}`}>
+    <motion.div 
+      className="letter gold-border"
+      initial={{ scale: 0.8, y: 0, opacity: 0 }}
+      animate={{ 
+        scale: 1, 
+        y: -160, 
+        opacity: 1,
+        zIndex: 10,
+      }}
+      exit={{ scale: 0.8, y: 0, opacity: 0 }}
+      transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+    >
       <motion.div
         className={`letter-content ${contentVisible ? 'letter-content-visible' : ''}`}
         initial={false}
@@ -107,7 +119,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
           <p className="text-sm text-textSecondary mt-2">Come see why Dukamo is anything but ordinary.</p>
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

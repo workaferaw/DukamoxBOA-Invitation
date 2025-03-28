@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
 @tailwind base;
@@ -67,13 +66,13 @@
 
 @layer components {
   .envelope {
-    @apply relative w-full max-w-md aspect-[4/3] bg-envelope rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer mx-auto;
+    @apply relative w-full max-w-md aspect-[4/3] bg-envelope rounded-lg overflow-hidden shadow-lg transition-transform duration-300 cursor-default mx-auto;
     margin-top: 2rem;
     transform: translateY(0);
   }
   
   .envelope-flap {
-    @apply absolute top-0 left-0 w-full h-1/2 bg-envelope transition-transform duration-500 origin-bottom;
+    @apply absolute top-0 left-0 w-full h-1/2 bg-envelope transition-transform duration-400 origin-bottom;
     clip-path: polygon(0 0, 50% 100%, 100% 0);
     z-index: 2;
   }
@@ -111,9 +110,11 @@
   }
   
   .letter {
-    @apply absolute top-1/2 left-1/2 w-[95%] h-[90%] bg-parchment rounded-lg shadow-md transition-all duration-500 ease-out;
-    transform: translate(-50%, 100%);
-    z-index: 0;
+    @apply fixed top-1/2 left-1/2 w-[95%] max-w-md h-[80vh] bg-parchment rounded-lg shadow-xl transition-all duration-400;
+    transform: translate(-50%, -45%);
+    z-index: 50;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   
   .letter-open {
@@ -134,8 +135,8 @@
   }
   
   .letter-content {
-    @apply p-6 h-full w-full flex flex-col items-center justify-start opacity-0 transition-opacity duration-300 delay-300 overflow-y-auto;
-    padding-top: 2rem;
+    @apply p-6 h-full w-full flex flex-col items-center justify-start opacity-0 transition-opacity duration-200;
+    padding-top: 1rem;
   }
   
   .letter-content-visible {
