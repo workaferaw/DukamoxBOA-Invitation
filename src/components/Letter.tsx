@@ -64,7 +64,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
             </div>
             <div>
               <p className="text-xs text-textSecondary uppercase tracking-wider">Date & Time</p>
-              <p className="text-textPrimary font-medium">Tuesday, March 25, 2025 • 3:00 PM (9:00 LT)</p>
+              <p className="text-textPrimary font-medium">Tuesday, April 2, 2025 • 3:00 PM (9:00 LT)</p>
             </div>
           </div>
 
