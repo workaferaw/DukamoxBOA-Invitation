@@ -10,10 +10,10 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
 
   useEffect(() => {
     if (isOpen) {
-      // Delay showing content until letter animation completes
+      // Delay showing content until letter animation completes - make it faster
       const timer = setTimeout(() => {
         setContentVisible(true);
-      }, 800);
+      }, 500);
       return () => clearTimeout(timer);
     } else {
       setContentVisible(false);
@@ -29,7 +29,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={contentVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="w-full"
         >
           <h1 className="text-center mb-6">
@@ -44,7 +44,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
           className="text-center text-textSecondary mb-8 italic leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={contentVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
           We're thrilled to invite you to the grand (soft) opening of our newest branch, in partnership with Bank of Abyssinia
         </motion.p>
@@ -53,7 +53,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
           className="bg-white/50 backdrop-blur-sm p-6 rounded-lg w-full max-w-xs mx-auto mb-8 shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={contentVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <div className="flex items-center mb-4">
             <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mr-3">
@@ -86,7 +86,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
           className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={contentVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
         >
           <h2 className="text-xl font-semibold text-textPrimary mb-4">What's Special About This Branch?</h2>
           <ul className="text-left space-y-3 text-textSecondary">
@@ -100,7 +100,7 @@ const Letter: React.FC<LetterProps> = ({ isOpen }) => {
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={contentVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.3, delay: 0.5 }}
         >
           <p className="text-sm text-textSecondary mb-3">RSVP: Let us know you're coming! Reply to this message or call us at (+251)940075265</p>
           <p className="text-sm text-textSecondary italic">We can't wait to celebrate this milestone with you.</p>

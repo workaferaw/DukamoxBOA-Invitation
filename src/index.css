@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
 @tailwind base;
@@ -72,7 +73,7 @@
   }
   
   .envelope-flap {
-    @apply absolute top-0 left-0 w-full h-1/2 bg-envelope transition-transform duration-700 origin-bottom;
+    @apply absolute top-0 left-0 w-full h-1/2 bg-envelope transition-transform duration-500 origin-bottom;
     clip-path: polygon(0 0, 50% 100%, 100% 0);
     z-index: 2;
   }
@@ -110,7 +111,7 @@
   }
   
   .letter {
-    @apply absolute top-1/2 left-1/2 w-[95%] h-[90%] bg-parchment rounded-lg shadow-md transition-all duration-700 ease-out;
+    @apply absolute top-1/2 left-1/2 w-[95%] h-[90%] bg-parchment rounded-lg shadow-md transition-all duration-500 ease-out;
     transform: translate(-50%, 100%);
     z-index: 0;
   }
@@ -133,7 +134,7 @@
   }
   
   .letter-content {
-    @apply p-6 h-full w-full flex flex-col items-center justify-start opacity-0 transition-opacity duration-500 delay-500 overflow-y-auto;
+    @apply p-6 h-full w-full flex flex-col items-center justify-start opacity-0 transition-opacity duration-300 delay-300 overflow-y-auto;
     padding-top: 2rem;
   }
   

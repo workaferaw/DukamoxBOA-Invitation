@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import Letter from './Letter';
@@ -14,7 +15,7 @@ const Envelope: React.FC<EnvelopeProps> = ({ isOpen, onToggle }) => {
         className="envelope"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
         onClick={() => !isOpen && onToggle()}
         whileHover={!isOpen ? { y: -5, scale: 1.02 } : {}}
       >
@@ -31,7 +32,7 @@ const Envelope: React.FC<EnvelopeProps> = ({ isOpen, onToggle }) => {
           className="mt-6 px-6 py-2 bg-gold hover:bg-goldLight text-white rounded-full font-medium shadow-md transition-colors duration-300 mx-auto block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.2 }}
+          transition={{ duration: 0.3, delay: 0.6 }}
           onClick={onToggle}
         >
           Close Invitation
