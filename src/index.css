@@ -72,7 +72,7 @@
   }
   
   .envelope-flap {
-    @apply absolute top-0 left-0 w-full h-1/2 bg-envelope transition-transform duration-400 origin-bottom;
+    @apply absolute top-0 left-0 w-full h-1/2 bg-envelope transition-transform duration-500 origin-bottom;
     clip-path: polygon(0 0, 50% 100%, 100% 0);
     z-index: 2;
   }
@@ -110,7 +110,7 @@
   }
   
   .letter {
-    @apply fixed top-1/2 left-1/2 w-[95%] max-w-md h-[80vh] bg-parchment rounded-lg shadow-xl transition-all duration-400;
+    @apply fixed top-1/2 left-1/2 w-[95%] max-w-md h-[80vh] bg-parchment rounded-lg shadow-xl transition-all duration-500;
     transform: translate(-50%, -45%);
     z-index: 50;
     overflow-y: auto;
